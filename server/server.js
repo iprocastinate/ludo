@@ -32,7 +32,8 @@ initRedis();
 const REQUIRED_PLAYERS = {
     'ffa_2': 2,
     'ffa_4': 4,
-    'team_2v2': 4
+    'team_2v2': 4,
+    'solo': 1
 };
 
 io.on('connection', (socket) => {
