@@ -15,4 +15,4 @@ class Config:
     REDIS_URI_2 = os.environ.get("REDIS_URI_2", "redis-16388.crce300.ap-south-1-2.ec2.cloud.redislabs.com:16388")
     
     # Web App URL
-    MINI_APP_URL = os.environ.get("MINI_APP_URL", "https://ludo-al9xxisj0-iprocastinates-projects.vercel.app/")
+    MINI_APP_URL = os.environ.get("MINI_APP_URL", "https://ludo-silk-eta.vercel.app/")
