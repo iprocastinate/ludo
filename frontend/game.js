@@ -49,7 +49,7 @@ drawBoard();
 
 // --- MULTIPLAYER WEBSOCKET LOGIC ---
 // IMPORTANT: Replace this URL with your actual Render URL once deployed!
-const BACKEND_URL = 'https://your-backend-project.onrender.com';
+const BACKEND_URL = 'https://ludo-m03g.onrender.com';
 const socket = io(BACKEND_URL); 
 
 let currentMatchId = null;
