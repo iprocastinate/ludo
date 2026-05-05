@@ -12,7 +12,7 @@ class Config:
     
     # Multi-Redis Setup (If needed on bot side)
     REDIS_URI_1 = os.environ.get("REDIS_URI_1", "redis://default:dKJuyhorvRzf1r5wHR8K9TaGZI30As0n@redis-19136.crce219.us-east-1-4.ec2.cloud.redislabs.com:19136")
-    REDIS_URI_2 = os.environ.get("REDIS_URI_2", "redis://redis-16388.crce300.ap-south-1-2.ec2.cloud.redislabs.com:16388")
+    REDIS_URI_2 = os.environ.get("REDIS_URI_2", "redis://default:bt9G82gTNhclQpdwiEuckvztAqnOD45K@redis-16388.crce300.ap-south-1-2.ec2.cloud.redislabs.com:16388")
     
     # Web App URL
     MINI_APP_URL = os.environ.get("MINI_APP_URL", "https://ludo-silk-eta.vercel.app/")
