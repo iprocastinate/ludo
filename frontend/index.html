@@ -2,27 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ludo Mini App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Ludo Champion</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <header>
-            <h1 class="small-caps">LUDO CHAMPION</h1>
-            <div id="user-info">Loading...</div>
-        </header>
-        
-        <div id="game-container">
-            <!-- The Ludo Board will be rendered here -->
-            <canvas id="ludo-board" width="400" height="400"></canvas>
+        <!-- Main Menu Screen -->
+        <div id="menu-screen" class="screen active">
+            <header>
+                <div class="user-badge">
+                    <img id="user-avatar" src="https://ui-avatars.com/api/?name=Guest&background=random" alt="Avatar">
+                    <span id="user-info">Loading...</span>
+                </div>
+            </header>
+            
+            <div class="logo-container">
+                <h1 class="glow-text">LUDO</h1>
+                <h2 class="sub-glow">CHAMPION</h2>
+            </div>
+
+            <div class="mode-selector">
+                <h3>SELECT MODE</h3>
+                <div class="mode-grid">
+                    <button class="mode-btn" data-mode="ffa_2">
+                        <span class="icon">⚔️</span>
+                        <span>1 VS 1</span>
+                    </button>
+                    <button class="mode-btn" data-mode="ffa_4">
+                        <span class="icon">🌍</span>
+                        <span>4 PLAYER</span>
+                    </button>
+                    <button class="mode-btn" data-mode="team_2v2">
+                        <span class="icon">🤝</span>
+                        <span>2 VS 2</span>
+                    </button>
+                    <button class="mode-btn" data-mode="solo">
+                        <span class="icon">🤖</span>
+                        <span>VS BOT</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="action-container">
+                <button id="find-match-btn" class="btn primary pulse-anim" disabled>FIND MATCH</button>
+                <p id="queue-status" class="status-text"></p>
+            </div>
         </div>
 
-        <div id="controls">
-            <button id="roll-dice-btn" class="btn primary">ROLL DICE</button>
-            <div id="dice-result" class="small-caps">-</div>
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="player-tag p1">You</div>
+                <div class="match-info">Match: <span id="match-id-display">...</span></div>
+                <div class="player-tag p2">Opponent</div>
+            </div>
+            
+            <div id="board-container" class="glass-panel">
+                <canvas id="ludo-board" width="360" height="360"></canvas>
+            </div>
+
+            <div id="game-controls">
+                <div id="dice-container" class="dice-box">
+                    <div id="dice-result" class="dice-face">?</div>
+                </div>
+                <button id="roll-dice-btn" class="btn action-btn disabled">WAITING...</button>
+            </div>
         </div>
     </div>
     <script src="game.js"></script>
