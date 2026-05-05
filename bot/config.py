@@ -11,7 +11,7 @@ class Config:
     MONGO_URI_2 = os.environ.get("MONGO_URI_2", "")  # Admins & Logs
     
     # Multi-Redis Setup (If needed on bot side)
-    REDIS_URI_1 = os.environ.get("REDIS_URI_1", "")
+    REDIS_URI_1 = os.environ.get("REDIS_URI_1", "redis-19136.crce219.us-east-1-4.ec2.cloud.redislabs.com:19136")
     REDIS_URI_2 = os.environ.get("REDIS_URI_2", "")
     
     # Web App URL
